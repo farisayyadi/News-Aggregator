@@ -1,0 +1,133 @@
+@import "../../global.scss";
+
+#filter {
+  margin-bottom: 50px;
+  position: fixed;
+  top: 0;
+  left: 50px;
+  background-color: #f5f5f5;
+  z-index: 1;
+  padding: 0 50px 30px 50px;
+  box-shadow: #f5f5f5 0px 7px 29px 0px;
+  width: calc(100% - 200px);
+
+  h1 {
+    width: 100%;
+  }
+
+  .filter {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    button,
+    input {
+      border: none;
+      outline: none;
+
+      &:focus,
+      &:visited,
+      &:active {
+        border: none;
+        outline: none;
+      }
+    }
+    section {
+      display: flex;
+      width: 50%;
+
+      input[type="search"] {
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px 0 0 5px;
+        font-size: 16px;
+        width: 88%;
+      }
+
+      button {
+        background-color: $blue;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.5s ease;
+
+        &:hover {
+          background-color: $dark-blue;
+        }
+      }
+    }
+    .filterSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: auto;
+
+      input[type="date"] {
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 0;
+      }
+    }
+    .filterSection > * {
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: $large-breakpoint) {
+    .filter {
+      flex-direction: column;
+
+      section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      .filterSection {
+        margin: unset;
+      }
+      .filterSection > * {
+        margin: 10px;
+      }
+    }
+  }
+
+  @media (max-width: $medium-breakpoint) {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .filter {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+
+      section {
+        width: 100%;
+        display: flex;
+
+        input[type="search"] {
+          width: 100%;
+        }
+      }
+      .filterSection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        & > * {
+          margin: 10px 0;
+        }
+        input[type="date"] {
+          width: 96%;
+        }
+      }
+    }
+  }
+}

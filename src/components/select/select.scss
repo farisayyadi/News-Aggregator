@@ -1,0 +1,21 @@
+@import "../../global.scss";
+
+select {
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+
+  option {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+  }
+  &:focus,
+  &:visited,
+  &:active {
+    border: none;
+    outline: none;
+  }
+}
